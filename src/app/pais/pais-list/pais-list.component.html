@@ -1,0 +1,32 @@
+<h1 style="size: 10pt; color: white; background-color:darkolivegreen;">Paises del Mundo</h1>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-8">
+      <table class="table">
+        <thead>
+          <tr>
+            <th><strong>#</strong></th>
+            <th><strong>Nombre</strong></th>
+            <th><strong>Capital</strong></th>
+            <th><strong>Año de Conformación</strong></th>
+          </tr>
+          <tr *ngFor = "let pais of paises" (click) = "onSelected(pais)">
+            <td>{{pais.id}}</td> 
+            <td>{{pais.name}}</td> 
+            <td>{{pais.capital}}</td> 
+            <td>{{pais.formation_year}}</td> 
+
+
+          </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+      </table>
+      <p>El país más antiguo del listado es <strong>{{oldestPaisName}}</strong> y fue conformado en {{oldestPaisYear}}</p>
+    </div>
+    <div class = "col-4" *ngIf = "isSelected">
+      <app-pais-detail [pais] = "selectedPais"></app-pais-detail>
+    </div>
+  </div>
+</div>
