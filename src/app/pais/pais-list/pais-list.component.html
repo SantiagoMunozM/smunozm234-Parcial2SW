@@ -10,9 +10,9 @@
             <th><strong>Capital</strong></th>
             <th><strong>Año de Conformación</strong></th>
           </tr>
-          <tr *ngFor = "let pais of paises" (click) = "onSelected(pais)">
+          <tr class = "table-secondary" *ngFor = "let pais of paises" (click) = "onSelected(pais)">
             <td>{{pais.id}}</td> 
-            <td>{{pais.name}}</td> 
+            <td style = "color:deepskyblue;">{{pais.name}}</td> 
             <td>{{pais.capital}}</td> 
             <td>{{pais.formation_year}}</td> 
 
